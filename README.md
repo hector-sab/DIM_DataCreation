@@ -1,6 +1,6 @@
 # Data creation for Deep Image Matting
 
-The purpose of the content of this repository is to easily prepare the data to train the [Deep Image Matting Network](https://github.com/Joker316701882/Deep-Image-Matting) coded by Ge Zheng. The main class (DataCreation2.py) uses the [SURREAL Database](https://github.com/gulvarol/surreal) for the EPS and alpha images, and an [Unannotated Database](http://host.robots.ox.ac.uk/pascal/VOC/databases.html#VOC2006) for the backgrounds. However, I have created classes for the main tasks, so it could be relatively easy to prepare data from other sources.
+The purpose of the content of this repository is to easily prepare the data to train the [Deep Image Matting Network](https://github.com/Joker316701882/Deep-Image-Matting) coded by Ge Zheng. The main class (DataCreation2.py) uses the [SURREAL Database](https://github.com/gulvarol/surreal) for the EPS and alpha images, and an [Unannotated Database](http://host.robots.ox.ac.uk/pascal/VOC/databases.html#VOC2006) for the backgrounds. However, I have created classes for the main tasks, so you would just need to use `PaddingBackgroundCreation.py`.
 
 Deep Image Matting paper [here](https://arxiv.org/pdf/1703.03872.pdf)
 
@@ -38,7 +38,7 @@ There's 4 files that will do the trick.
 
 `VidMatExtractor.py` extracts the correspondig alpha and eps from the segm.mat and .mp4 files.
 
-`PaddingBackgroundCreation` creates the 3 necesary images for training our model (eps, alpha, bg). NOTE: the parameter num_bgs referes to how many backgrounds are we going to use for each  eps image. So it randomnly samples num_bgs images from the BG_DIR and combine them with the alpha and eps images. Therefore, if we use `num_bgs=100` for each `eps`/`alpha` image we are going to have 100 images.
+`PaddingBackgroundCreation.py` creates the 3 necesary images for training our model (eps, alpha, bg). NOTE: the parameter num_bgs referes to how many backgrounds are we going to use for each  eps image. So it randomnly samples num_bgs images from the BG_DIR and combine them with the alpha and eps images. Therefore, if we use `num_bgs=100` for each `eps`/`alpha` image we are going to have 100 images.
 
 ## Folders Structure
 

@@ -108,13 +108,14 @@ The output directory generates the structure shown below:
 ```
 .
 ├── alpha1280
-│   ├── 0
-│   │   ├── 0.png
-│   │   ├── 1.png
-│   │   ├── 2.png
-│   │   ├── 3.png
-│   │   ├── 4.png
-│   ├── 1
+│   ├── 0 # folder for alpha image 0
+│   │   ├── 0.png # alpha image 0 with background 0
+│   │   ├── 1.png # alpha image 0 with background 1
+│   │   ├── 2.png # alpha image 0 with background 2
+│   │   ├── 3.png # alpha image 0 with background 3
+│   │   ├── 4.png # alpha image 0 with background 4
+│   │
+│   ├── 1 # folder for alpha image 1
 │   ├── 2
 │   ├── 3
 │   ├── 4
@@ -123,12 +124,13 @@ The output directory generates the structure shown below:
 │   .
 │
 ├── bg
-│   ├── 0
-│   │   ├── 0.png
-│   │   ├── 1.png
-│   │   ├── 2.png
-│   │   ├── 3.png
-│   │   ├── 4.png
+│   ├── 0 # backgrounds for eps/alpha image 0
+│   │   ├── 0.png # background 0
+│   │   ├── 1.png # background 1
+│   │   ├── 2.png # background 2
+│   │   ├── 3.png # background 3
+│   │   ├── 4.png # background 4
+│   │
 │   ├── 1
 │   ├── 2
 │   ├── 3
@@ -138,12 +140,13 @@ The output directory generates the structure shown below:
 │   .
 │
 └── eps1280
-    ├── 0
-    │   ├── 0.png
-    │   ├── 1.png
-    │   ├── 2.png
-    │   ├── 3.png
-    │   ├── 4.png
+    ├── 0 # folder for eps image 0
+    │   ├── 0.png # alpha image 0 with background 0
+    │   ├── 1.png # alpha image 0 with background 1
+    │   ├── 2.png # alpha image 0 with background 2
+    │   ├── 3.png # alpha image 0 with background 3
+    │   ├── 4.png # alpha image 0 with background 4
+    │
     ├── 1
     ├── 2
     ├── 3

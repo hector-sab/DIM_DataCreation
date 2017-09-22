@@ -5,9 +5,9 @@ The purpose of the content of this repository is to easily prepare the data to t
 Deep Image Matting paper [here](https://arxiv.org/pdf/1703.03872.pdf)
 
 
-## How it works
+## How to run it
 
-Just run python in the commandline and use the following code:
+Just run python in the commandline and use the code below. Don't forget to change the folders directory.
 
 ```python
 
@@ -28,7 +28,18 @@ for folder in folders:
   create.create_data()
 ```
 
-## SURREAL DataSet Folder Structure
+## How it works
+
+There's 4 files that will do the trick.
+
+`DataCreation2.py` is the main file for generating the data from the SURREAL database.
+`MatExtractor.py` extracts the alpha images from the segm.mat files. Each segm.mat file has a whole lot of alphas
+`VidMatExtractor.py` extracts the correspondig alpha and eps from the segm.mat and .mp4 files.
+`PaddingBackgroundCreation` creates the 3 necesary images for training our model (eps, alpha, bg). NOTE: the parameter num_bgs referes to how many backgrounds are we going to use for each  eps image. So it randomnly samples num_bgs images from the BG_DIR and combine them with the alpha and eps images. Therefore, if we use `num_bgs=100` for each `eps`/`alpha` image we are going to have 100 images.
+
+## Folders Structure
+
+The SURREAL Folder Structure is as follow, but the code above just works at level 4 (run0, run1, etc) and uses the mp4 and segm.mat files.
 
 ```
 .
@@ -36,6 +47,18 @@ for folder in folders:
     ├── cmu
     │   ├── test
     │   │   ├── run0
+    │   │   │   ├── 40_06_c0001_depth.mat
+    │   │   │   ├── 40_06_c0001_info.mat
+    │   │   │   ├── 40_06_c0001.mp4
+    │   │   │   ├── 40_06_c0001_segm.mat
+    │   │   │   ├── 40_06_c0002_depth.mat
+    │   │   │   ├── 40_06_c0002_info.mat
+    │   │   │   ├── 40_06_c0002.mp4
+    │   │   │   ├── 40_06_c0002_segm.mat
+    │   │   │   ├── 40_06_c0003_depth.mat
+    │   │   │   ├── 40_06_c0003_info.mat
+    │   │   │   ├── 40_06_c0003.mp4
+    │   │   │   └── 40_06_c0003_segm.mat
     │   │   ├── run1
     │   │   └── run2
     │   └── train
@@ -53,3 +76,76 @@ for folder in folders:
             └── run2
 ```
 
+The backgrounds folder just contain all the possible backgrounds to be used in our training
+
+```
+.
+├── 983
+├── 984
+├── 985
+├── 986
+├── 987
+├── 988
+├── 989
+├── 99
+├── 990
+├── 991
+├── 992
+├── 993
+├── 994
+├── 995
+├── 996
+├── 997
+├── 998
+└── 999
+```
+
+The output directory generates the structure shown below:
+
+```
+.
+├── alpha1280
+│   ├── 0
+│   │   ├── 0.png
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   ├── 3.png
+│   │   ├── 4.png
+│   ├── 1
+│   ├── 2
+│   ├── 3
+│   ├── 4
+│   .
+│   .
+│   .
+│
+├── bg
+│   ├── 0
+│   │   ├── 0.png
+│   │   ├── 1.png
+│   │   ├── 2.png
+│   │   ├── 3.png
+│   │   ├── 4.png
+│   ├── 1
+│   ├── 2
+│   ├── 3
+│   ├── 4
+│   .
+│   .
+│   .
+│
+└── eps1280
+    ├── 0
+    │   ├── 0.png
+    │   ├── 1.png
+    │   ├── 2.png
+    │   ├── 3.png
+    │   ├── 4.png
+    ├── 1
+    ├── 2
+    ├── 3
+    ├── 4
+    .
+    .
+    .
+```

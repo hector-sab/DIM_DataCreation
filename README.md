@@ -30,4 +30,26 @@ for folder in folders:
 
 ## SURREAL DataSet Folder Structure
 
+```
+.
+└── data
+    ├── cmu
+    │   ├── test
+    │   │   ├── run0
+    │   │   ├── run1
+    │   │   └── run2
+    │   └── train
+    │       ├── run0
+    │       ├── run1
+    │       └── run2
+    └── h36m
+        ├── test
+        │   ├── run0
+        │   ├── run1
+        │   └── run2
+        └── train
+            ├── run0
+            ├── run1
+            └── run2
+```
 

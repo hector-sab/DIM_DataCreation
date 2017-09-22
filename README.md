@@ -33,8 +33,11 @@ for folder in folders:
 There's 4 files that will do the trick.
 
 `DataCreation2.py` is the main file for generating the data from the SURREAL database.
+
 `MatExtractor.py` extracts the alpha images from the segm.mat files. Each segm.mat file has a whole lot of alphas
+
 `VidMatExtractor.py` extracts the correspondig alpha and eps from the segm.mat and .mp4 files.
+
 `PaddingBackgroundCreation` creates the 3 necesary images for training our model (eps, alpha, bg). NOTE: the parameter num_bgs referes to how many backgrounds are we going to use for each  eps image. So it randomnly samples num_bgs images from the BG_DIR and combine them with the alpha and eps images. Therefore, if we use `num_bgs=100` for each `eps`/`alpha` image we are going to have 100 images.
 
 ## Folders Structure

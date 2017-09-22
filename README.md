@@ -38,7 +38,7 @@ There's 4 files that will do the trick.
 
 `VidMatExtractor.py` extracts the correspondig alpha and eps from the segm.mat and .mp4 files.
 
-`PaddingBackgroundCreation.py` creates the 3 necesary images for training our model (eps, alpha, bg). NOTE: the parameter num_bgs referes to how many backgrounds are we going to use for each  eps image. So it randomnly samples num_bgs images from the BG_DIR and combine them with the alpha and eps images. Therefore, if we use `num_bgs=100` for each `eps`/`alpha` image we are going to have 100 images.
+`PaddingBackgroundCreation.py` creates the 3 necesary images for training our model (eps, alpha, bg). NOTE: the parameter num_bgs referes to how many backgrounds we are going to use for each  eps image. So it randomnly samples num_bgs images from the BG_DIR and combine them with the alpha and eps images. Therefore, if we use `num_bgs=100` for each `eps`/`alpha` image we are going to have 100 images.
 
 ## Folders Structure
 

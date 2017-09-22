@@ -9,7 +9,7 @@ Deep Image Matting paper [here](https://arxiv.org/pdf/1703.03872.pdf)
 
 Just run python in the commandline and use the following code:
 
-'''python
+```python
 
 from DataCreation2 import DataCreation
 
@@ -26,7 +26,7 @@ for folder in folders:
   print('folder '+folder)
   create = DataCreation(ipath=SUR_DATA_DIR, opath=OUT_DIR, bg_path=BG_DIR)
   create.create_data()
-'''
+```
 
 ## SURREAL DataSet Folder Structure
 

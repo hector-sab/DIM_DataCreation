@@ -22,10 +22,8 @@ OUT_DIR = '/data/HectorSanchez/Deep-Image-Matting/data/'
 # Backgrounds 
 BG_DIR = '/data/HectorSanchez/Deep-Image-Matting/backgrounds/'
 
-for folder in folders:
-  print('folder '+folder)
-  create = DataCreation(ipath=SUR_DATA_DIR, opath=OUT_DIR, bg_path=BG_DIR)
-  create.create_data()
+create = DataCreation(ipath=SUR_DATA_DIR, opath=OUT_DIR, bg_path=BG_DIR)
+create.create_data()
 ```
 
 ## How it works
